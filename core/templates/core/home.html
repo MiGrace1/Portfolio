@@ -1,0 +1,230 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Michelle Grace — Ingénieure Logiciel & Co-fondatrice AxeNova{% endblock %}
+{% block nav_home %}active{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Disponible pour un stage · Yaoundé, Cameroun
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-name">Michelle</span>
+        <span class="hero-name accent">Grace</span>
+        <span class="hero-subtitle-line">Ingénieure <em>Logiciel</em></span>
+      </h1>
+      <p class="hero-desc">
+        Élève ingénieure en Génie Logiciel · Technicienne en Systèmes &amp; Réseaux · 
+        Co-fondatrice d'<strong>AxeNova</strong>. Je conçois et développe des solutions digitales 
+        qui transforment les organisations.
+      </p>
+      <div class="hero-actions">
+        <a href="/projets/" class="btn-primary">Voir mes projets</a>
+        <a href="#contact" class="btn-ghost">Me contacter</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{{ projets_count }}+</span>
+          <span class="stat-label">Projets</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Stages réalisés</span>
+        </div>
+        <div class="stat-div"></div>
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">Startup co-fondée</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="card-glow"></div>
+        <div class="profile-ring">
+          <div class="profile-initials">MG</div>
+        </div>
+        <div class="hero-tags">
+          <span class="tag tag-1">Python 🐍</span>
+          <span class="tag tag-2">Django</span>
+          <span class="tag tag-3">PostgreSQL</span>
+          <span class="tag tag-4">Flutter</span>
+          <span class="tag tag-5">Git</span>
+          <span class="tag tag-6">Linux</span>
+          <span class="tag tag-7">Docker 🐳</span>
+          <span class="tag tag-8">Agile/Scrum</span>
+        </div>
+        <div class="axenova-badge">
+          <span class="ax-icon">⚡</span>
+          <div>
+            <strong>AxeNova</strong>
+            <small>Co-Fondatrice · Jan 2026</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section about-section">
+  <div class="container">
+    <div class="section-label">// À propos</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">Construire le futur<br/>numérique <em>africain</em></h2>
+        <p>
+          Passionnée d'informatique depuis mes études au Lycée Bilingue de Yaoundé, 
+          j'ai suivi un parcours alliant <strong>systèmes &amp; réseaux</strong> et <strong>génie logiciel</strong> 
+          à l'IAI-Cameroun. Chaque projet est pour moi une opportunité de résoudre 
+          de vrais problèmes avec des solutions élégantes.
+        </p>
+        <p>
+          En janvier 2026, j'ai co-fondé <strong>AxeNova</strong>, une startup informatique 
+          dédiée au développement de solutions numériques innovantes pour les entreprises 
+          et administrations camerounaises.
+        </p>
+        <div class="about-perks">
+          <div class="perk">
+            <span class="perk-icon">🎯</span>
+            <span>Apprentissage rapide</span>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">👑</span>
+            <span>Esprit de leadership</span>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🔄</span>
+            <span>Très bonne adaptabilité</span>
+          </div>
+          <div class="perk">
+            <span class="perk-icon">🌍</span>
+            <span>Trilingue FR · EN · DE</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-skills">
+        {% for categorie, skills in competences.items %}
+        <div class="skill-group">
+          <h4 class="skill-cat">{{ categorie }}</h4>
+          {% for skill in skills %}
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">{{ skill.nom }}</span>
+              <span class="skill-pct">{{ skill.niveau }}%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="--target: {{ skill.niveau }}%"></div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="section projets-section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-label">// Projets récents</div>
+        <h2 class="section-title">Ce que j'ai <em>réalisé</em></h2>
+      </div>
+      <a href="/projets/" class="btn-ghost">Voir tout →</a>
+    </div>
+    <div class="projets-grid">
+      {% for projet in projets %}
+      <div class="projet-card" style="--delay: {{ forloop.counter0 }}">
+        <div class="projet-top">
+          <span class="projet-icon">{{ projet.icone }}</span>
+          <span class="projet-annee">{{ projet.annee }}</span>
+        </div>
+        <div class="projet-cat">{{ projet.categorie }}</div>
+        <h3 class="projet-titre">{{ projet.titre }}</h3>
+        <p class="projet-desc">{{ projet.description|truncatechars:140 }}</p>
+        <div class="projet-tech">
+          {% for tech in projet.technologies %}
+          <span class="tech-pill">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        <div class="projet-footer">
+          <span class="projet-entreprise">📍 {{ projet.entreprise }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS TIMELINE -->
+<section class="section timeline-section">
+  <div class="container">
+    <div class="section-label">// Formation &amp; Parcours</div>
+    <h2 class="section-title">Mon <em>chemin</em></h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot active"></div>
+        <div class="tl-content">
+          <span class="tl-date">2024 — 2026</span>
+          <h4>Licence 3 Génie Logiciel</h4>
+          <p>IAI-Cameroun, Campus de Nkolanga</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot active"></div>
+        <div class="tl-content">
+          <span class="tl-date">Nov 2024 — Oct 2025</span>
+          <h4>Diplôme Technicienne Supérieure</h4>
+          <p>Systèmes &amp; Réseaux · IAI-Cameroun</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">Juil — Sep 2025</span>
+          <h4>Stage · DOWHILE AWAE</h4>
+          <p>Développement système d'administration LDAP</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">Jan 2026</span>
+          <h4>Co-fondatrice AxeNova ⚡</h4>
+          <p>Startup informatique · Yaoundé, Cameroun</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">Juil — Sep 2024</span>
+          <h4>Stage · WELLDONE&amp;CO</h4>
+          <p>Système IA d'orientation scolaire</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <span class="tl-date">2020 — 2021</span>
+          <h4>Baccalauréat C</h4>
+          <p>Mathématiques &amp; Sciences Physiques · Lycée Bilingue de Yaoundé Essos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}Michelle Grace — Ingénieure Logiciel{% endblock %}</title>
+  <meta name="description" content="Portfolio de Metheu Sadeu Michelle Grace — Élève Ingénieure en Génie Logiciel, co-fondatrice d'AxeNova, Yaoundé Cameroun." />
+  {% load static %}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+
+<div class="noise-overlay"></div>
+<div class="grid-bg"></div>
+
+<!-- NAVIGATION -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <span class="logo-bracket">&lt;</span>MG<span class="logo-bracket">/&gt;</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link {% block nav_home %}{% endblock %}">Accueil</a></li>
+      <li><a href="/projets/" class="nav-link {% block nav_projets %}{% endblock %}">Projets</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li>
+        <a href="https://github.com/MiGrace1" target="_blank" class="nav-cta">
+          GitHub <span class="arrow">↗</span>
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-left">
+        <h2 class="footer-title">Travaillons<br/><em>ensemble.</em></h2>
+        <p class="footer-sub">Ouverte aux stages, projets freelance &amp; collaborations tech</p>
+      </div>
+      <div class="footer-form-wrap">
+        <form id="contactForm" class="contact-form" onsubmit="submitContact(event)">
+          {% csrf_token %}
+          <div class="form-row">
+            <input type="text" name="nom" placeholder="Votre nom" required class="form-input" />
+            <input type="email" name="email" placeholder="Votre email" required class="form-input" />
+          </div>
+          <textarea name="message" placeholder="Décrivez votre projet ou opportunité..." required class="form-input form-textarea"></textarea>
+          <button type="submit" class="btn-send">
+            Envoyer le message <span class="arrow">→</span>
+          </button>
+          <p id="formMessage" class="form-msg"></p>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-links">
+        <a href="mailto:gracesadeu@gmail.com" class="footer-link">gracesadeu@gmail.com</a>
+        <a href="https://linkedin.com/in/gracesadeu" target="_blank" class="footer-link">LinkedIn</a>
+        <a href="https://github.com/MiGrace1" target="_blank" class="footer-link">GitHub</a>
+        <span class="footer-link">📍 Yaoundé, Cameroun</span>
+      </div>
+      <p class="footer-copy">© 2026 Michelle Grace · AxeNova Co-Founder · Built with Django 🐍</p>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+function submitContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    nom: form.nom.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+  const btn = form.querySelector('.btn-send');
+  btn.textContent = 'Envoi en cours...';
+  fetch('/contact/', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken')},
+    body: JSON.stringify(data),
+  })
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('formMessage').textContent = data.message;
+    document.getElementById('formMessage').className = 'form-msg success';
+    form.reset();
+    btn.textContent = 'Envoyer le message →';
+  })
+  .catch(() => {
+    document.getElementById('formMessage').textContent = 'Erreur lors de l\'envoi. Réessayez.';
+    document.getElementById('formMessage').className = 'form-msg error';
+    btn.textContent = 'Envoyer le message →';
+  });
+}
+function getCookie(name) {
+  let v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+  return v ? v[2] : null;
+}
+</script>
+</body>
+</html>

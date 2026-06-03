@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Projets — Michelle Grace{% endblock %}
+{% block nav_projets %}active{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">// Mes Projets</div>
+    <h1 class="page-title">Ce que je <em>construis</em></h1>
+    <p class="page-sub">Applications web, systèmes IA, administration réseau — des solutions concrètes à des problèmes réels.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <!-- FILTER -->
+    <div class="filter-bar">
+      <a href="/projets/" class="filter-btn {% if categorie_active == 'tous' %}active{% endif %}">Tous</a>
+      {% for cat in categories %}
+      <a href="/projets/?cat={{ cat }}" class="filter-btn {% if categorie_active == cat %}active{% endif %}">{{ cat }}</a>
+      {% endfor %}
+    </div>
+
+    <!-- PROJETS GRID -->
+    <div class="projets-grid projets-grid--full">
+      {% for projet in projets %}
+      <div class="projet-card projet-card--full" style="--delay: {{ forloop.counter0 }}">
+        <div class="projet-top">
+          <span class="projet-icon">{{ projet.icone }}</span>
+          <span class="projet-annee">{{ projet.annee }}</span>
+        </div>
+        <div class="projet-cat">{{ projet.categorie }}</div>
+        <h3 class="projet-titre">{{ projet.titre }}</h3>
+        <p class="projet-desc">{{ projet.description }}</p>
+        
+        <div class="projet-features">
+          <h5>Points clés</h5>
+          <ul>
+            {% for feat in projet.features %}
+            <li>✓ {{ feat }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="projet-tech">
+          {% for tech in projet.technologies %}
+          <span class="tech-pill">{{ tech }}</span>
+          {% endfor %}
+        </div>
+        <div class="projet-footer">
+          <span class="projet-entreprise">📍 {{ projet.entreprise }}</span>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
