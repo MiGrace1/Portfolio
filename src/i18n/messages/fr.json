@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "description": "Portfolio de Metheu Sadeu Michelle Grace, ingénieure en génie logiciel à Yaoundé, Cameroun."
+  },
+  "nav": {
+    "label": "Navigation principale",
+    "home": "Accueil",
+    "projects": "Projets",
+    "contact": "Contact",
+    "skipToContent": "Aller au contenu"
+  },
+  "language": {
+    "switch": "Read this page in English"
+  },
+  "theme": {
+    "toggle": "Changer de thème"
+  },
+  "footer": {
+    "contactLabel": "Coordonnées",
+    "location": "Yaoundé, Cameroun",
+    "rights": "Tous droits réservés."
+  },
+  "home": {
+    "title": "Ingénieure en Génie Logiciel | Fullstack, Data & DevOps"
+  },
+  "projects": {
+    "title": "Projets"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "common": {
+    "comingSoon": "Cette page arrive bientôt."
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "Cette page n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'accueil"
+  }
+}

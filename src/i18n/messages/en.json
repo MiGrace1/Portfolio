@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "description": "Portfolio of Metheu Sadeu Michelle Grace, software engineer based in Yaoundé, Cameroon."
+  },
+  "nav": {
+    "label": "Main navigation",
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact",
+    "skipToContent": "Skip to content"
+  },
+  "language": {
+    "switch": "Lire cette page en français"
+  },
+  "theme": {
+    "toggle": "Change theme"
+  },
+  "footer": {
+    "contactLabel": "Contact details",
+    "location": "Yaoundé, Cameroon",
+    "rights": "All rights reserved."
+  },
+  "home": {
+    "title": "Software Engineer | Fullstack, Data & DevOps"
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "common": {
+    "comingSoon": "This page is coming soon."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page does not exist or has been moved.",
+    "backHome": "Back to home"
+  }
+}

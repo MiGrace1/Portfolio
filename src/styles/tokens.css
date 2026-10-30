@@ -1,0 +1,22 @@
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0a0a0f;
+  --surface: #14141b;
+  --foreground: #f0ede8;
+  --muted: #aaa59d;
+  --border: #2c2b33;
+  --accent: #e8b86d;
+  --accent-foreground: #0a0a0f;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --background: #faf7f2;
+  --surface: #f1ebe1;
+  --foreground: #1b1814;
+  --muted: #5c554c;
+  --border: #dcd3c5;
+  --accent: #855700;
+  --accent-foreground: #ffffff;
+}
