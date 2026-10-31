@@ -65,10 +65,25 @@
     "confidentialNote": "Projet confidentiel : le code, les données et les captures ne sont pas publics."
   },
   "contact": {
-    "title": "Contact"
-  },
-  "common": {
-    "comingSoon": "Cette page arrive bientôt."
+    "title": "Contact",
+    "intro": "Une opportunité en CDD ou CDI, une question sur mon parcours ? Écrivez-moi, je vous répondrai dès que possible.",
+    "form": {
+      "name": "Nom",
+      "email": "Adresse e-mail",
+      "message": "Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "Merci, votre message a bien été envoyé.",
+      "rateLimited": "Trop de tentatives. Veuillez réessayer dans quelques minutes.",
+      "failed": "L'envoi a échoué. Réessayez ou écrivez-moi directement par e-mail.",
+      "errors": {
+        "nameTooShort": "Votre nom doit contenir au moins 2 caractères.",
+        "nameTooLong": "Votre nom ne doit pas dépasser 100 caractères.",
+        "emailInvalid": "Saisissez une adresse e-mail valide.",
+        "messageTooShort": "Votre message doit contenir au moins 10 caractères.",
+        "messageTooLong": "Votre message ne doit pas dépasser 5 000 caractères."
+      }
+    }
   },
   "notFound": {
     "title": "Page introuvable",

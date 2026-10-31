@@ -65,10 +65,25 @@
     "confidentialNote": "Confidential project: the code, data and screenshots are not public."
   },
   "contact": {
-    "title": "Contact"
-  },
-  "common": {
-    "comingSoon": "This page is coming soon."
+    "title": "Contact",
+    "intro": "A fixed-term or permanent opportunity, or a question about my background? Write to me and I will reply as soon as possible.",
+    "form": {
+      "name": "Name",
+      "email": "Email address",
+      "message": "Message",
+      "send": "Send message",
+      "sending": "Sending...",
+      "success": "Thank you, your message has been sent.",
+      "rateLimited": "Too many attempts. Please try again in a few minutes.",
+      "failed": "Sending failed. Please try again or email me directly.",
+      "errors": {
+        "nameTooShort": "Your name must be at least 2 characters long.",
+        "nameTooLong": "Your name must not exceed 100 characters.",
+        "emailInvalid": "Enter a valid email address.",
+        "messageTooShort": "Your message must be at least 10 characters long.",
+        "messageTooLong": "Your message must not exceed 5,000 characters."
+      }
+    }
   },
   "notFound": {
     "title": "Page not found",
