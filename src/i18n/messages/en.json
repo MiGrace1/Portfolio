@@ -21,7 +21,31 @@
     "rights": "All rights reserved."
   },
   "home": {
-    "title": "Software Engineer | Fullstack, Data & DevOps"
+    "hero": {
+      "photoAlt": "Portrait of Michelle Grace in a pink suit and an orange and green headscarf, standing in a bright office.",
+      "viewProjects": "View my projects",
+      "contactMe": "Contact me"
+    },
+    "about": {
+      "title": "About",
+      "education": "Education",
+      "languages": "Languages"
+    },
+    "experience": { "title": "Experience" },
+    "skills": {
+      "title": "Skills",
+      "daily": "Daily use",
+      "notions": "Working knowledge"
+    },
+    "featuredProjects": {
+      "title": "Featured projects",
+      "viewAll": "View all projects",
+      "readCaseStudy": "Read the case study: {title}"
+    },
+    "cta": {
+      "title": "Let's work together",
+      "description": "I am open to fixed-term and permanent opportunities. Write to me to discuss them."
+    }
   },
   "projects": {
     "title": "Projects"

@@ -3,6 +3,10 @@ export const en = {
     title: "Software Engineer | Fullstack, Data & DevOps",
     tagline:
       "A graduate of IAI-Cameroon with expertise in secure API design, predictive analytics and infrastructure administration. Responsive, rigorous and ready to contribute from day one.",
+    about: [
+      "I am a software engineer trained at IAI-Cameroon, working at KIAMA S.A. in Yaoundé, where I build backend and fullstack applications.",
+      "My dual background in software engineering and in systems and networks lets me follow a project from the data model through to deployment: secure APIs, data analysis and going live on a VPS.",
+    ],
     location: "Yaoundé, Cameroon",
     availability: "Open to fixed-term and permanent positions",
   },
@@ -25,7 +29,7 @@ export const en = {
       role: "Internship",
       period: "Jul. - Sep. 2025",
       highlights: [
-        "LDAP access management interface with change tracking, built with Django and PostgreSQL",
+        "LDAP access management interface with change tracking and PostgreSQL",
         "Technical support",
       ],
     },
@@ -35,14 +39,6 @@ export const en = {
       period: "Jul. - Sep. 2024",
       highlights: [
         "School tracking platform built with Django and MySQL, with an AI module for student guidance",
-      ],
-    },
-    {
-      company: "Collins Eclairage Mobile",
-      role: "[À COMPLÉTER: job title at Collins Eclairage Mobile]",
-      period: "2023",
-      highlights: [
-        "Client file management system with digitization and electronic archiving",
       ],
     },
   ],
@@ -63,7 +59,7 @@ export const en = {
   ],
   languages: [
     { name: "French", level: "Native" },
-    { name: "English", level: "[À COMPLÉTER: CEFR level in English]" },
+    { name: "English", level: "Little Good" },
     { name: "German", level: "Goethe-Zertifikat A1 and A2" },
   ],
   skills: [
@@ -80,7 +76,7 @@ export const en = {
     {
       name: "Data & AI",
       daily: ["Python", "Pandas", "NumPy", "Scikit-Learn"],
-      notions: ["Machine learning"],
+      notions: ["Machine learning", "Prompt Engineering"],
     },
     {
       name: "Databases",

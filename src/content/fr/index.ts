@@ -3,6 +3,10 @@ export const fr = {
     title: "Ingénieure en Génie Logiciel | Fullstack, Data & DevOps",
     tagline:
       "Diplômée de l'IAI-Cameroun, j'ai développé une expertise en conception d'APIs sécurisées, analyse prédictive et administration d'infrastructures. Réactive, rigoureuse et immédiatement opérationnelle.",
+    about: [
+      "Ingénieure en génie logiciel formée à l'IAI-Cameroun, je travaille chez KIAMA S.A. à Yaoundé, où je développe des applications backend et fullstack.",
+      "Ma double formation en génie logiciel et en systèmes et réseaux me permet de suivre un projet du modèle de données jusqu'au déploiement : APIs sécurisées, analyse de données et mise en ligne sur VPS.",
+    ],
     location: "Yaoundé, Cameroun",
     availability: "Ouverte à un poste en CDD ou CDI",
   },
@@ -25,7 +29,7 @@ export const fr = {
       role: "Stage",
       period: "Juil. - sept. 2025",
       highlights: [
-        "Interface de gestion des accès LDAP avec traçabilité des modifications, en Django et PostgreSQL",
+        "Interface de gestion des accès LDAP avec traçabilité des modifications et PostgreSQL",
         "Support technique",
       ],
     },
@@ -35,14 +39,6 @@ export const fr = {
       period: "Juil. - sept. 2024",
       highlights: [
         "Plateforme de suivi scolaire en Django et MySQL, avec un module d'IA pour l'orientation des élèves",
-      ],
-    },
-    {
-      company: "Collins Eclairage Mobile",
-      role: "[À COMPLÉTER: intitulé du poste chez Collins Eclairage Mobile]",
-      period: "2023",
-      highlights: [
-        "Système de gestion des dossiers clients avec numérisation et archivage électronique",
       ],
     },
   ],
@@ -63,7 +59,7 @@ export const fr = {
   ],
   languages: [
     { name: "Français", level: "Langue maternelle" },
-    { name: "Anglais", level: "[À COMPLÉTER: niveau CECRL en anglais]" },
+    { name: "Anglais", level: "Assez Bien" },
     { name: "Allemand", level: "Goethe-Zertifikat A1 et A2" },
   ],
   skills: [
@@ -80,7 +76,7 @@ export const fr = {
     {
       name: "Data & IA",
       daily: ["Python", "Pandas", "NumPy", "Scikit-Learn"],
-      notions: ["Machine learning"],
+      notions: ["Machine learning", "Prompt Ingénierie"],
     },
     {
       name: "Bases de données",

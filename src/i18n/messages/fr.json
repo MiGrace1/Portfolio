@@ -21,7 +21,31 @@
     "rights": "Tous droits réservés."
   },
   "home": {
-    "title": "Ingénieure en Génie Logiciel | Fullstack, Data & DevOps"
+    "hero": {
+      "photoAlt": "Portrait de Michelle Grace, en tailleur rose et foulard aux tons orange et vert, debout dans un bureau clair.",
+      "viewProjects": "Voir mes projets",
+      "contactMe": "Me contacter"
+    },
+    "about": {
+      "title": "À propos",
+      "education": "Formation",
+      "languages": "Langues"
+    },
+    "experience": { "title": "Expérience" },
+    "skills": {
+      "title": "Compétences",
+      "daily": "Au quotidien",
+      "notions": "Notions"
+    },
+    "featuredProjects": {
+      "title": "Projets phares",
+      "viewAll": "Voir tous les projets",
+      "readCaseStudy": "Lire l'étude de cas : {title}"
+    },
+    "cta": {
+      "title": "Travaillons ensemble",
+      "description": "Je suis à l'écoute de vos opportunités en CDD ou CDI. Écrivez-moi pour en discuter."
+    }
   },
   "projects": {
     "title": "Projets"

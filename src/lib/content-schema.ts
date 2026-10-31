@@ -47,6 +47,7 @@ export const contentSchema = z
     profile: z.object({
       title: text,
       tagline: text,
+      about: z.array(text).min(1),
       location: text,
       availability: text,
     }),
