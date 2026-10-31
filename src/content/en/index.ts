@@ -59,7 +59,7 @@ export const en = {
   ],
   languages: [
     { name: "French", level: "Native" },
-    { name: "English", level: "Little Good" },
+    { name: "English", level: "Intermediate" },
     { name: "German", level: "Goethe-Zertifikat A1 and A2" },
   ],
   skills: [
@@ -76,7 +76,7 @@ export const en = {
     {
       name: "Data & AI",
       daily: ["Python", "Pandas", "NumPy", "Scikit-Learn"],
-      notions: ["Machine learning", "Prompt Engineering"],
+      notions: ["Machine learning", "Prompt engineering"],
     },
     {
       name: "Databases",

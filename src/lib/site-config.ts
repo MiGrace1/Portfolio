@@ -29,7 +29,7 @@ export const siteConfig = {
    * so it comes from the server-only GEP_LIVE_URL environment variable.
    */
   confidentiality: {
-    showLiveLink: false,
-    showScreenshots: false,
+    showLiveLink: false as boolean,
+    showScreenshots: false as boolean,
   },
 } as const;

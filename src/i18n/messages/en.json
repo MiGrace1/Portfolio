@@ -39,8 +39,7 @@
     },
     "featuredProjects": {
       "title": "Featured projects",
-      "viewAll": "View all projects",
-      "readCaseStudy": "Read the case study: {title}"
+      "viewAll": "View all projects"
     },
     "cta": {
       "title": "Let's work together",
@@ -48,7 +47,22 @@
     }
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "description": "Case studies of my software engineering projects: context, contribution, stack and outcome.",
+    "back": "All projects",
+    "previous": "Previous project",
+    "next": "Next project",
+    "details": {
+      "role": "Role",
+      "organization": "Organization",
+      "status": "Status",
+      "stack": "Stack",
+      "links": "Links",
+      "repository": "Source code",
+      "demo": "Demo",
+      "live": "Live site"
+    },
+    "confidentialNote": "Confidential project: the code, data and screenshots are not public."
   },
   "contact": {
     "title": "Contact"

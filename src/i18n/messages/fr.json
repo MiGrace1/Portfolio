@@ -39,8 +39,7 @@
     },
     "featuredProjects": {
       "title": "Projets phares",
-      "viewAll": "Voir tous les projets",
-      "readCaseStudy": "Lire l'étude de cas : {title}"
+      "viewAll": "Voir tous les projets"
     },
     "cta": {
       "title": "Travaillons ensemble",
@@ -48,7 +47,22 @@
     }
   },
   "projects": {
-    "title": "Projets"
+    "title": "Projets",
+    "description": "Études de cas de mes projets en génie logiciel : contexte, contribution, stack et résultat.",
+    "back": "Tous les projets",
+    "previous": "Projet précédent",
+    "next": "Projet suivant",
+    "details": {
+      "role": "Rôle",
+      "organization": "Organisation",
+      "status": "Statut",
+      "stack": "Stack",
+      "links": "Liens",
+      "repository": "Code source",
+      "demo": "Démo",
+      "live": "Site en production"
+    },
+    "confidentialNote": "Projet confidentiel : le code, les données et les captures ne sont pas publics."
   },
   "contact": {
     "title": "Contact"
