@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { ContactForm } from "@/components/sections/contact-form";
 import { Section } from "@/components/ui/section";
+import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("contact");
 
-  return { title: t("title"), description: t("intro") };
+  return buildMetadata({
+    locale: await getLocale(),
+    href: "/contact",
+    title: t("title"),
+    ogTitle: t("title"),
+    description: t("intro"),
+  });
 }
 
 export default function ContactPage() {

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/layout/footer";
@@ -36,6 +36,14 @@ export default async function LocaleLayout({
     notFound();
   }
   const t = await getTranslations("nav");
+  const { nav, language, theme, contact } = await getMessages();
+  // Only what client components read, to keep the page payload small.
+  const clientMessages = {
+    nav,
+    language,
+    theme,
+    contact: { form: contact.form },
+  };
 
   return (
     <html
@@ -48,7 +56,7 @@ export default async function LocaleLayout({
         <ThemeScript />
       </head>
       <body className="flex min-h-dvh flex-col">
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={clientMessages}>
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-surface focus:p-3"

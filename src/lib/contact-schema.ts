@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+// Stops Zod from probing eval in the browser, which the CSP forbids.
+z.config({ jitless: true });
+
 // Error messages are translation keys from contact.form.errors.
 export const contactSchema = z.object({
   name: z.string().trim().min(2, "nameTooShort").max(100, "nameTooLong"),

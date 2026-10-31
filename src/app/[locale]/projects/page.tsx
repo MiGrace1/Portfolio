@@ -1,15 +1,22 @@
 import type { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 import { ProjectCard } from "@/components/sections/project-card";
 import { Section } from "@/components/ui/section";
 import { getContent } from "@/lib/content";
+import { buildMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("projects");
 
-  return { title: t("title"), description: t("description") };
+  return buildMetadata({
+    locale: await getLocale(),
+    href: "/projects",
+    title: t("title"),
+    ogTitle: t("title"),
+    description: t("description"),
+  });
 }
 
 export default function ProjectsPage() {
@@ -25,7 +32,7 @@ export default function ProjectsPage() {
       <ul className="mt-12 grid gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <li key={project.slug}>
-            <ProjectCard project={project} />
+            <ProjectCard project={project} headingLevel="h2" />
           </li>
         ))}
       </ul>

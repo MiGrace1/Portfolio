@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
-import { hasLocale } from "next-intl";
+import { hasLocale, type Locale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
@@ -16,6 +16,7 @@ import {
   getProject,
   loadCaseStudy,
 } from "@/lib/content";
+import { buildMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 
@@ -36,7 +37,13 @@ export async function generateMetadata({
     return {};
   }
 
-  return { title: project.title, description: project.summary };
+  return buildMetadata({
+    locale: locale as Locale,
+    href: { pathname: "/projects/[slug]", params: { slug } },
+    title: project.title,
+    ogTitle: project.title,
+    description: project.summary,
+  });
 }
 
 export default async function ProjectPage({
