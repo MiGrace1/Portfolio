@@ -21,7 +21,7 @@ export const siteConfig = {
   phone: "+237 687 285 525",
   social: {
     github: "https://github.com/MiGrace1",
-    linkedin: "[À COMPLÉTER: URL exacte du profil LinkedIn]",
+    linkedin: "https://www.linkedin.com/in/michelle-sadeu-7134a5302",
   },
   /**
    * Stay false until the supervisor gives written authorization.

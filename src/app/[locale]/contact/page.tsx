@@ -4,6 +4,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 import { ContactForm } from "@/components/sections/contact-form";
 import { Section } from "@/components/ui/section";
+import { isContactFormEnabled } from "@/lib/contact-config";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -30,7 +31,7 @@ export default function ContactPage() {
         {t("intro")}
       </p>
       <div className="mt-12 grid gap-12 md:grid-cols-[3fr_2fr] md:gap-16">
-        <ContactForm />
+        {isContactFormEnabled() && <ContactForm />}
         <address className="space-y-1 text-sm text-muted not-italic">
           <p>
             <a

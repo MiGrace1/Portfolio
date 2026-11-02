@@ -15,6 +15,10 @@ type ContactMessage = { name: string; email: string; message: string };
 async function sendEmail({ name, email, message }: ContactMessage) {
   const { RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL } = process.env;
   if (!RESEND_API_KEY || !CONTACT_TO_EMAIL || !CONTACT_FROM_EMAIL) {
+    if (process.env.NODE_ENV === "development") {
+      console.info(`[dev] Email not sent, Resend is not set up: ${name}`);
+      return;
+    }
     throw new Error("Contact email is not configured");
   }
 
