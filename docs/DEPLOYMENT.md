@@ -17,6 +17,16 @@ Ce guide décrit la mise en ligne sur Vercel depuis le dépôt GitHub.
 
 Si des marqueurs restent, le déploiement de production échoue avec leur liste : c'est le comportement voulu.
 
+### Déployer en ligne de commande
+
+Le projet `michelle-grace-portfolio` est déployé depuis ce dossier, sans lien avec GitHub : un push ne met pas le site à jour. Pour publier une nouvelle version :
+
+```powershell
+npx vercel deploy --prod --yes
+```
+
+Pour automatiser ces déploiements à chaque push, lance `npx vercel git connect`.
+
 ## 3. Variables d'environnement
 
 À renseigner dans **Settings**, puis **Environment Variables**.
